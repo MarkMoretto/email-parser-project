@@ -24,3 +24,5 @@ yarn-error.log*
 # Local
 .vscode/
 dev[_-]*.*
+*.doc[x]
+*.xls[xm]

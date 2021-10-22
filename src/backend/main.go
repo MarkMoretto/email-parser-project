@@ -1,17 +1,10 @@
 package main
 
 import (
-	// "fmt"
-	// "io/fs"
-	// "log"
-	// "os"
-	// ttar "moretto/goapi/tarfile"
-	// "path/filepath"
-	"net/http"
-	// s "moretto/goapi/server"
-	t "moretto/goapi/tarfile"
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"	
+	"github.com/labstack/echo/v4/middleware"
+	t "moretto/goapi/tarfile"
+	"net/http"
 )
 
 const TarFilePath string = "data\\sampleEmails.tar.gz"
@@ -22,7 +15,6 @@ var messages = t.InitTarInfo(TarFilePath)
 func getMessages(ec echo.Context) error {
 	return ec.JSON(http.StatusOK, messages)
 }
-
 
 func main() {
 	// TarFilePath := "data\\sampleEmails.tar.gz"

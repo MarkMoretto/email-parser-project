@@ -7,10 +7,21 @@ import (
 	"io"
 	p "moretto/goapi/parse"
 	u "moretto/goapi/utils"
-	// "bytes"
 	"os"
-	// "compress/gzip"
 )
+
+type EmailMessage struct {
+	Id        int    `json:"_id"`
+	To        string `json:"to"`
+	From      string `json:"from"`
+	Date      string `json:"date"`
+	Subject   string `json:"subject"`
+	MessageId string `json:"messageId"`
+}
+
+type EmailMessages struct {
+	Messages []EmailMessage `json:"messages"`
+}
 
 type worker struct {
 	osf *os.File
@@ -37,10 +48,65 @@ func (w *worker) unleashGzip() {
 }
 
 // Set tarfile worker object.
-func (w *worker) unleashTar() {
+func (w *worker) getTarInstance() {
 	w.trf = tar.NewReader(w.gzf)
 }
 
+func InitTarInfo(tarFilePath string) EmailMessages {
+	wrkr := worker{}
+	messageData := EmailMessages{}
+
+	wrkr.makeFileObj(tarFilePath)
+	defer wrkr.osf.Close()
+
+	wrkr.unleashGzip()
+
+	wrkr.getTarInstance()
+
+	var i int = 0
+	for {
+		hdr, err := wrkr.trf.Next()
+
+		if err == io.EOF {
+			break
+		} else if err != nil {
+			u.HandleErr(err)
+		}
+
+		// Check file type and handle accordingly.
+		switch hdr.Typeflag {
+		case tar.TypeDir: // = directory
+			continue
+		case tar.TypeReg: // = regular file
+			fileData := make([]byte, hdr.Size)
+			_, err := wrkr.trf.Read(fileData)
+			if err != nil {
+				u.HandleErr(err)
+			}
+			fmt.Printf("Name: %s\n\n", hdr.Name)
+			p.PrintMatches(fileData)
+			tmpMap := p.GetMatches(fileData)
+			mapKeys := p.GetTokenList()
+
+			msg := &EmailMessage{
+				Id:        i,
+				To:        tmpMap[(*mapKeys)[0]],
+				From:      tmpMap[(*mapKeys)[1]],
+				Date:      tmpMap[(*mapKeys)[2]],
+				Subject:   tmpMap[(*mapKeys)[3]],
+				MessageId: tmpMap[(*mapKeys)[4]],
+			}
+			messageData.Messages = append(messageData.Messages, *msg)
+
+		default: // = unknown type
+			fmt.Printf("Unable to determine type %c in file %s\n", hdr.Typeflag, hdr.Name)
+		}
+		i++
+	}
+	return messageData
+}
+
+// Return sample data for data set
 func GetTarInfo(tarFilePath string) {
 
 	wrkr := worker{}
@@ -49,7 +115,7 @@ func GetTarInfo(tarFilePath string) {
 	defer wrkr.osf.Close()
 
 	wrkr.unleashGzip()
-	wrkr.unleashTar()
+	wrkr.getTarInstance()
 
 	// DEBUG: Only iterate through n number
 	// of emails.

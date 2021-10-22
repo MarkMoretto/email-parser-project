@@ -1,0 +1,16 @@
+##############################
+###  Core app requirements ###
+##############################
+
+# FastAPI
+fastapi
+
+# Rust-based JSON package
+orjson
+
+# Server
+uvicorn[standard]
+
+
+# Uncomment to include development.txt
+-r dev.txt

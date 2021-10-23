@@ -1,4 +1,4 @@
 from pathlib import Path
 
-ROOT_DIR: Path = Path().parent
+ROOT_DIR: Path = Path(".")
 

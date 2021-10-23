@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-
+import orjson
 from typing import Optional, List
 
 from pydantic import BaseModel
@@ -11,44 +11,24 @@ from fastapi.responses import ORJSONResponse
 
 from starlette.status import HTTP_400_BAD_REQUEST
 
-from src import DATA_DIR, Path
+from ..emailviewer.main import retrieve_messages
 
-from src.main import df_nlp
-
-
+### --- Create APIRouter instance --- ###
+# This will be added into the main app API when
+# app is initialized.
 email_message_router = APIRouter(prefix="/messages")
 
-
-def load_pretrained_model(url: Path):
-    """Load a pre-trained model from local storage."""
-    return MatrixSimilarity.load(str(url.absolute()))
-
-
-ldam_path = DATA_DIR.joinpath("ldam-model.index")
-
-ldam_model = load_pretrained_model(ldam_path)
-
-# Retrieve data
-# documents = df_for_nlp(min_frequency=1)
+# Preload data from relevant function.
+message_cache = retrieve_messages()
+# print(message_cache[0])
 
 
-# @token_router.post("/related/", response_class = ORJSONResponse)
-# async def get_top_keywords(request: Request, query_string: str, top_n: Optional[int] = 10) -> ORJSONResponse:
-#     ..
-@email_message_router.get("/", response_class = ORJSONResponse)
-async def counter(sample_size: Optional[int] = -1) -> ORJSONResponse:
+@email_message_router.get("", response_class = ORJSONResponse)
+async def get_all_messages() -> ORJSONResponse:
     """
-    # Retrieve list of common English stopwords.
-    &nbsp;
-    ## Parameters
-    \----------------
-    - **sample_size** {_int_} - Number of random stopwords to retrieve.
+    # Retrieve all email messages
     """
-    _sw = stopwords
-    if sample_size > 0:
-        # _sw = choices(stopwords, k = sample_size)
-        _sw = rand_sample(stopwords, k = sample_size)
     msg = {
-        "stopwords": _sw
+        "messages": message_cache
     }
     return ORJSONResponse(status_code=200, content = msg)

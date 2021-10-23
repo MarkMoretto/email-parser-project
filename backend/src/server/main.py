@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-#############################
-###--- BEGIN: IMPORTS --- ###
+######################
+###--- IMPORTS --- ###
 from datetime import datetime as dt
 
 from fastapi import APIRouter, Depends, FastAPI
@@ -18,13 +18,11 @@ from src.apps._types import Optional
 from config import dev_settings as settings
 
 # Function to get email messages.
-from src.apps import retrieve_messages
+from src.apps import email_message_router, retrieve_messages
 
-## ---/ END: IMPORTS --- ###
-############################
+## ---/ IMPORTS --- ###
+#######################
 
-### Set app to debug mode via config
-# email_app = FastAPI(title=settings.APP_NAME, debug=settings.DEBUG_MODE)
 
 ### API init
 api = APIRouter(prefix="")
@@ -68,5 +66,8 @@ async def home() -> ORJSONResponse:
     return ORJSONResponse(status_code=200, content = msg)
 
 
-### Create app
+# --- Instance app
 email_app = create_app()
+
+# --- Add additional routes
+email_app.include_router(email_message_router)

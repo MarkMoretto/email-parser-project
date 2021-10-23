@@ -19,16 +19,23 @@ Require:
 """
 
 import re
-
+from os import linesep
 # List of fields to use when parsing email message.
 FIELD_LIST = ["To", "From", "Date", "Subject", "Message-ID"]
 
-    
+def clean_line(string: str) -> str:
+    return str(string).strip()
 
 def repattern(tkn: str) -> str:
     """Return regular expression with specified token parameter.
     """
-    return rf"{tkn}:\s*?(.+)\n"
+    return rf"{tkn}:\s*?(.+)\n?"
+
+def re_pattern_full(tokens: list) -> str:
+    """Return regular expression with specified token parameter.
+    """
+    agg_tokens = "|".join([rf"\b{token}\b" for token in tokens])
+    return rf"^(?:{agg_tokens}):\s*?(.+)\n?"
 
 def make_fieldmap(iterable: list) -> dict:
     """Return key-value collection of lightly-processed field names.
@@ -40,18 +47,27 @@ def simple_parser(data: bytes, fieldlist: list = FIELD_LIST) -> dict:
     """Return key-value collection of tokens and related content for a 
     given line in an email message.
     """
-    d = data.decode("utf-8")
+    if hasattr(data, "decode"):
+        data = data.decode("utf-8")
+
+    lines = data.strip().split(linesep)
 
     fields = tuple(fieldlist)
-    output = dict.fromkeys(field_list, "")
+    n_fields = len(fields)
+    output = dict.fromkeys(fieldlist, "")
 
-    for line in d.strip().split("\n"):
-        tmp_line = str(line).lstrip()
-        if tmp_line.startswith(fields):
+    match_count = 0
+    for line in lines:
+        # Exit early if all matches complete.
+        if match_count == n_fields:
+            break
+
+        tmp_line = clean_line(line)
+        if tmp_line.startswith(fields) and ":" in tmp_line:
             args = re.split(r":\s*", tmp_line, maxsplit=1)
             if len(args) == 2:
                 token, content = args
                 output[token] = content
+                match_count += 1
 
     return output
-

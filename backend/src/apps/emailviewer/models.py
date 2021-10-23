@@ -11,10 +11,15 @@ from datetime import datetime as dt
 
 # Third-Party
 from bson import ObjectId
-from pydantic import BaseModel, Field, PrivateAttr, ValidationError
+from pydantic import (
+    BaseModel,
+    Field, 
+    PrivateAttr, 
+    ValidationError,
+    )
 
 
-### BEGIN: HELPER UTILS ###
+# --- HELPER UTILS --- #
 
 class PyObjectId(ObjectId):
     @classmethod
@@ -31,13 +36,12 @@ class PyObjectId(ObjectId):
     def __modify_schema__(cls, field_schema):
         field_schema.update(type = "string")
 
-### / END: HELPER UTILS ###
+    # ---/ HELPER UTILS --- #
 
 
-### BEGIN: MODELS ###
+    # --- MODELS --- #
 
-
-    # -- BEGIN: EMAIL MESSAGE -- #
+    # --- EMAIL MESSAGE -- #
 
 class EmailMessage(BaseModel):
     """EmailMessage Updater class."""
@@ -65,11 +69,11 @@ class EmailMessage(BaseModel):
             ]
         }
 
-    # -- / END: EMAIL MESSAGE -- #
+    # --/ EMAIL MESSAGE -- #
 
 
 
-    # -- BEGIN: UPDATERS -- #
+    # -- UPDATERS -- #
 
 
 class UpdateEmailMessage(BaseModel):
@@ -81,9 +85,9 @@ class UpdateEmailMessage(BaseModel):
     field_subject: Optional[str]
     field_message_id: Optional[str]
 
-    # -- / END: UPDATERS -- #
+    # --/ UPDATERS -- #
 
 
 
 
-### / END: MODELS ###
+# ---/ MODELS --- #

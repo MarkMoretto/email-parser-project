@@ -1,0 +1,85 @@
+/*****************************
+    HOME PAGE / LIST CONTAINER
+*****************************/
+.list-container {
+    width: calc(100vw * 0.15);
+    margin-top: 2rem;
+}
+
+
+.center {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.number-list {
+    font-size: 1.7rem;
+    line-height: 1.5rem;
+    text-align: center;
+    min-width: 10rem;
+    max-width: 12rem;
+    border: 1px solid #000000;
+}
+
+.number-list div {
+    display: inline-block;
+    padding: 0.4em 0;
+}
+
+.number-list div a {
+    text-decoration: none;
+    color: var(--cyan-10);
+}
+
+.number-list div:nth-child(odd) {
+    background-color: var(--greyblue-2);
+}
+
+.number-list div:hover {
+    /* border: 0.25px solid var(--greyblue-10); */
+    background-color: var(--greyblue-10);
+    color: var(--cyan-1);
+}
+
+.number-list div a:hover {
+    color: var(--cyan-1);
+}
+
+
+
+/*****************
+    TRACKER PAGE
+*****************/
+
+.tracker-container {
+    margin-bottom: 2rem;
+    color: var(--greyblue-10);
+}
+
+.tracker-header p {
+    align-self: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.tracker-header {
+    /* border: 1px solid green; */
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+/* Tracker page, form 'header' section */
+.tracker-body {
+    /* border: 1px solid blue; */
+    max-height: calc(100vh * 0.4);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}

@@ -1,0 +1,14 @@
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-self: center;
+}
+
+.rs-form {
+    border: 1px solid #000000;
+    display: flex;
+    flex-flow: column wrap;
+    justify-self: center;  
+}

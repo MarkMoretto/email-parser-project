@@ -1,0 +1,35 @@
+
+.form-group {
+    /* border: 1px solid #000000; */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.input-item::before {
+    content: "";
+}
+.input-item {
+    border: 1px solid black;
+    padding: 0;
+    margin: 4px;
+
+}
+
+.input-item {
+    margin-bottom: 5px;
+}
+
+
+.text-input {
+    width: 30rem;
+}
+
+.date-picker {
+    width: auto;
+}
+
+.currency-picker {
+    width: 12rem;
+}

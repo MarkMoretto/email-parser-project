@@ -1,0 +1,118 @@
+@import url("rsuite/dist/rsuite.min.css");
+
+:root {
+    --cyan-1: #f2fcff;
+    --cyan-2: #ccf3ff;
+    --cyan-3: #a6e9ff;
+    --cyan-4: #80ddff;
+    --cyan-5: #59d0ff;
+    --cyan-6: #34c3ff;
+    --cyan-7: #25b3f5;
+    --cyan-8: #169de0;
+    --cyan-9: #0a81c2;
+    --cyan-10: #006199;
+
+    --greyblue-1: #f0fbff;
+    --greyblue-2: #cfe1e8;
+    --greyblue-3: #b0c8d1;
+    --greyblue-4: #93aeba;
+    --greyblue-5: #7996a3;
+    --greyblue-6: #607d8b;
+    --greyblue-7: #48738a;
+    --greyblue-8: #2e6585;
+    --greyblue-9: #16567d;
+    --greyblue-10: #014573;
+
+    --pinkred-1: #ffedf5;
+    --pinkred-2: #fac0d7;
+    --pinkred-3: #f595ba;
+    --pinkred-4: #f26d9e;
+    --pinkred-5: #ed4580;
+    --pinkred-6: #e91e63;
+    --pinkred-7: #de1655;
+    --pinkred-8: #c90e46;
+    --pinkred-9: #ab0735;
+    --pinkred-10: #820124;
+
+    --green-1: #f7fff2;
+    --green-2: #cfebc0;
+    --green-3: #a5d48e;
+    --green-4: #81bf63;
+    --green-5: #5ea83e;
+    --green-6: #429321;
+    --green-7: #378f17;
+    --green-8: #2b850d;
+    --green-9: #1f7505;
+    --green-10: #156100;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    font: 62.5% / 1.15 sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+h1,
+h2 {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+input[type="text"] {
+    border-radius: 0;
+}
+
+body {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    background-color: var(--cyan-2);
+    font: 1.6rem/1.25 Arial, sans-serif;
+    color: #4d4d4d;
+}
+
+@media screen and (min-width: 620px) {
+    body {
+        font-size: 1.5rem;
+        line-height: 1.25;
+    }
+}
+
+.rs-navbar {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: var(--cyan-2);
+    border-bottom: 1px solid #000000;
+}

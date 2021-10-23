@@ -18,8 +18,10 @@ const Layout = ({ activeKey, children }: LayoutProps) => {
     return (
         <Container className="container">
             <Navbar>
-                <Nav.Item eventKey="corporate" href="https://www.kroll.com/en" target="_blank">
-                    <BrandLogo />
+                <Nav.Item eventKey="corporate" href="https://www.validity.com" target="_blank" rel="noreferrer">
+                    <BrandLogo
+                        brandName={`validity`}
+                    />
                 </Nav.Item>
 
                 <Nav activeKey={activeKey}>

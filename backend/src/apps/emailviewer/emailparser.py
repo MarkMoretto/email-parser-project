@@ -47,10 +47,9 @@ def simple_parser(data: bytes, fieldlist: list = FIELD_LIST) -> dict:
     """Return key-value collection of tokens and related content for a 
     given line in an email message.
     """
-    if hasattr(data, "decode"):
-        data = data.decode("utf-8")
+    sdata = data.decode("utf-8")
 
-    lines = data.strip().split(linesep)
+    lines = sdata.strip().split("\n")
 
     fields = tuple(fieldlist)
     n_fields = len(fields)

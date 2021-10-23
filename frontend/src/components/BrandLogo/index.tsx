@@ -11,7 +11,7 @@ import "./styles.css"
  * @param {Map} translateCoords - Map of X and y coords for moving the logo across and
  * 									down a display area.
  */
- const BrandLogo: FunctionComponent<BrandLogoProps>  = ({ brandName = "validity", logoWidth = 80, logoHeight = 20, ...props }) => {
+ const BrandLogo: FunctionComponent<BrandLogoProps>  = ({ brandName, logoWidth = 80, logoHeight = 20, ...props }) => {
     return (
         <svg version="1.1" 
 			xmlns="http://www.w3.org/2000/svg"

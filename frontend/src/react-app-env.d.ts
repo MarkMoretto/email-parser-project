@@ -7,8 +7,9 @@ interface ListItemStruct {
 }
 
 interface BrandLogoProps {
-	logoWidth?: String
-    logoHeight?: String
+    brandName?: string
+	logoWidth?: string
+    logoHeight?: string
 }
 
 

@@ -1,17 +1,17 @@
 # syntax=docker/dockerfile:1
 FROM python:3.7-slim
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # COPY /requirements/core.txt requirements/core.txt
 # COPY /requirements/testing.txt requirements/testing.txt
-COPY . /usr/src/app
+COPY . /app
 
-RUN pip install -r /usr/src/app/requirements/core.txt
+RUN pip install -r /app/requirements/core.txt
 
 EXPOSE 8000:8000
 
 COPY . .
 
-# ENTRYPOINT [ "python" ]
-# CMD ["-m", "src"]
+ENTRYPOINT [ "python" ]
+CMD ["-m", "src"]

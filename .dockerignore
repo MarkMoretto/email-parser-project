@@ -25,3 +25,4 @@ start-app.cmd
 .vscode
 .doc[x]
 dev[_-]*.*
+.devcontainer/

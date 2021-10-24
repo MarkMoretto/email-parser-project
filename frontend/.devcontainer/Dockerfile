@@ -3,14 +3,12 @@ FROM node:16-slim
 
 WORKDIR /usr/src/app
 
-RUN npm install -g yarn
-
 # Install app dependencies
-COPY package*.json /usr/src/app
-RUN yarn
+COPY package*.json ./
+RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . .
 
 # Run application
-CMD ["yarn", "start"]
+CMD ["npm", "start"]

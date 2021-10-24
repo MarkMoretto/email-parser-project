@@ -1,11 +1,18 @@
 version: '3.8'
 services:
-  node:
+  frontend:
     image: "node:16-slim"
-    user: "node"
     working_dir: /usr/src/app
     volumes:
       - ./:/home/node/app
     expose:
       - "3000:3000"
     command: "npm start"
+
+  backend:
+    image: "python:3.7-slim"
+    working_dir: /usr/src/app
+    build:
+      context: ./
+    ports:
+      - 8000:8000

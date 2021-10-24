@@ -1,0 +1,15 @@
+{
+    "name": "app env",
+    "dockerFile": "Dockerfile",
+    "appPort": [3000],
+    "runArgs": ["-u", "node"],
+    "postCreateCommand": "npm install",
+    "settings": {
+        "workbench.colorTheme": "Atom One Dark",
+        "terminal.integrated.automationShell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "remimarsal.prettier-now",
+        "akamud.vscode-theme-onedark"
+    ]
+}

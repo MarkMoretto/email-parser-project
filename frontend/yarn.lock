@@ -1601,7 +1601,7 @@
   resolved "https://registry.yarnpkg.com/@rsuite/icon-font/-/icon-font-4.0.0.tgz#c4a772af5020bb3bbf74761879f80da23e914123"
   integrity sha512-rZTgpTH3H3HLczCA2rnkWfoMKm0ZXoRzsrkVujfP/FfslnKUMvO6w56pa8pCvhWGpNEPUsLS2ULnFGpTEcup/Q==
 
-"@rsuite/icons@^1.0.0":
+"@rsuite/icons@^1.0.0", "@rsuite/icons@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@rsuite/icons/-/icons-1.0.2.tgz#1b53f6e5dc1dabec7a40ac5773ecc2172f05d09e"
   integrity sha512-Y7vJNDQpJnFlyYSUXQ2iQ9Meg7+ZKcrIenhpYDdM3c7vYDE/L7pml+hrK28jk6QfV/QkVv5B504D+l7aM6AAJQ==
@@ -1833,13 +1833,6 @@
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.2.22.tgz#47020d7e4cf19194d43b5202f35f75bd2ad35ce7"
   integrity sha512-tFfcE+DSTzWAgifkjik9AySNqIyNoYwmR+uecPwwD/XRNfvOjmC/FjCxpiUGDkDVDphPfCUecSQVFw+lN3M3kQ==
 
-"@types/classnames@^2.2.8":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.3.1.tgz#3c2467aa0f1a93f1f021e3b9bcf938bd5dfdc0dd"
-  integrity sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==
-  dependencies:
-    classnames "*"
-
 "@types/eslint@^7.2.6":
   version "7.28.1"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.28.1.tgz#50b07747f1f84c2ba8cd394cf0fe0ba07afce320"
@@ -1929,9 +1922,9 @@
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
 "@types/lodash@^4.14.134":
-  version "4.14.175"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.175.tgz#b78dfa959192b01fae0ad90e166478769b215f45"
-  integrity sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==
+  version "4.14.176"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.176.tgz#641150fc1cda36fbfa329de603bbb175d7ee20c0"
+  integrity sha512-xZmuPTa3rlZoIbtDUyJKZQimJV3bxCmzMIO2c9Pz9afyDro6kr7R79GwcB6mRhuoPmV2p1Vb66WOJH7F886WKQ==
 
 "@types/minimatch@*":
   version "3.0.5"
@@ -1998,9 +1991,9 @@
     "@types/react" "*"
 
 "@types/react-virtualized@^9.21.11":
-  version "9.21.13"
-  resolved "https://registry.yarnpkg.com/@types/react-virtualized/-/react-virtualized-9.21.13.tgz#4222173abe7c9ed7504c75886c8367502ac7b9f1"
-  integrity sha512-tCIQ5wDKj+QJ3sMzjPKSLY0AXsznt+ovAUcq+JCLjPBOcAHbPt4FraGT9HKYEFfmp9E6+ELuN49i5bWtuBmi3w==
+  version "9.21.14"
+  resolved "https://registry.yarnpkg.com/@types/react-virtualized/-/react-virtualized-9.21.14.tgz#8d465aa54386a7bebc7b61f71afc588bb800b868"
+  integrity sha512-wvZftXXYNpj3ELVm2v8pySnq/uxKD1UsFpRkNoBAbQFTnI4Bz4OcwjUhwvaqUq5dDoT6SCS2+PdCzysxMYfjdg==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -2012,7 +2005,16 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.0":
+"@types/react@*":
+  version "17.0.32"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.32.tgz#89a161286bbe2325d4d516420a27364a324909f4"
+  integrity sha512-hAm1pmwA3oZWbkB985RFwNvBRMG0F3KWSiC4/hNmanigKZMiKQoH5Q6etNw8HIDztTGfvXyOjPvdNnvBUCuaPg==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.0":
   version "17.0.30"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.30.tgz#2f8e6f5ab6415c091cc5e571942ee9064b17609e"
   integrity sha512-3Dt/A8gd3TCXi2aRe84y7cK1K8G+N9CZRDG8kDGguOKa0kf/ZkSwTmVIDPsm/KbQOVMaDJXwhBtuOXxqwdpWVg==
@@ -3506,7 +3508,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@*, classnames@>=2.0.0, classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
@@ -10153,10 +10155,10 @@ rollup@^1.31.1:
     "@types/node" "*"
     acorn "^7.1.0"
 
-rsuite-table@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.0.0.tgz#003be78db1ae10aba0f2efad902d465d5ce4ade5"
-  integrity sha512-HPVikMU1z7L/h4BAfDp25CFmInwZEqOLYL30EjrDbUbPZgPjhRPC4Yi1i40kMSxBI7Q9oONSdxD95TI5wenwVQ==
+rsuite-table@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.0.1.tgz#83590f59d9d9f575b6d287b990ab142a777830af"
+  integrity sha512-jtAa5o/UU62DG1SOyrR6LaPYX6WPK4s5U3UkQnrFWNfSrpy8umb00Rn2orU3eK+IvL8e7R2a1RM8QGcXIIZThg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@rsuite/icons" "^1.0.0"
@@ -10166,18 +10168,17 @@ rsuite-table@^5.0.0:
     lodash "^4.17.21"
 
 rsuite@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.0.1.tgz#b46e06a266b52efb615d393417db241e88bf42e9"
-  integrity sha512-G8BrL9yI+IC/PvrLpdsDz5gkY04YxrHVVXpTeco90EH2jCwSOGZH99EHQrYxw9IF+S7V7wNAUsNrigoSD4ynhA==
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.0.3.tgz#8195a1fc429308c757f5aabfac51c1003bc6606b"
+  integrity sha512-RBALydeLB20iNYOmQ4KbU2ZN0uyq3AEkeD0F2atEa5Ly7wwdCU+kS2GVHObU91qUHgXTeb0OE6rr4LGoD7yTaw==
   dependencies:
     "@babel/runtime" "^7.8.4"
-    "@rsuite/icons" "^1.0.0"
+    "@rsuite/icons" "^1.0.2"
     "@types/chai" "^4.2.18"
-    "@types/classnames" "^2.2.8"
     "@types/lodash" "^4.14.134"
     "@types/prop-types" "^15.7.1"
     "@types/react-virtualized" "^9.21.11"
-    classnames ">=2.0.0"
+    classnames "^2.3.1"
     date-fns "^2.13.0"
     dom-lib "^2.0.3"
     element-resize-event "^3.0.6"
@@ -10185,7 +10186,7 @@ rsuite@^5.0.1:
     prop-types "^15.7.2"
     react-text-mask "^5.4.3"
     react-virtualized "^9.22.3"
-    rsuite-table "^5.0.0"
+    rsuite-table "^5.0.1"
     schema-typed "^2.0.1"
 
 rsvp@^4.8.4:

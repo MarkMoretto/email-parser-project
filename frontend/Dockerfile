@@ -13,4 +13,4 @@ RUN yarn
 COPY . /usr/src/app
 
 # Run application
-CMD ["yarn", "start"]
+# CMD ["yarn", "start"]

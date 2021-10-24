@@ -1,18 +1,10 @@
-version: '3.8'
-services:
-  frontend:
-    image: "node:16-slim"
-    working_dir: /usr/src/app
-    volumes:
-      - ./:/home/node/app
-    expose:
-      - "3000:3000"
-    command: "npm start"
+version: "3"
 
-  backend:
-    image: "python:3.7-slim"
-    working_dir: /usr/src/app
-    build:
-      context: ./
-    ports:
-      - 8000:8000
+services:
+  frontend-node:
+    build: ./frontend
+    command: "yarn start"
+
+  backend-python:
+    build: ./backend
+    command: "python -m src"

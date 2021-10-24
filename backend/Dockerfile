@@ -12,5 +12,5 @@ EXPOSE 8000:8000
 
 COPY . .
 
-ENTRYPOINT [ "python" ]
-CMD ["-m", "src"]
+# ENTRYPOINT [ "python" ]
+# CMD ["-m", "src"]

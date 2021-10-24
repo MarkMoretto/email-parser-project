@@ -1,22 +1,11 @@
 version: '3.8'
 services:
-  dynamodb-local:
-    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
-    image: "amazon/dynamodb-local:latest"
-    container_name: dynamodb-local
-    ports:
-      - "8000:8000"
+  node:
+    image: "node:16-slim"
+    user: "node"
+    working_dir: /usr/src/app
     volumes:
-      - "./docker/dynamodb:/home/dynamodblocal/data"
-    working_dir: /home/dynamodblocal
-    networks:
-      - highscore-network
-  highscore:
-    build: .
-    image: torben/highscore:latest
-    ports:
-      - "5000:5000"
-    networks:
-      - highscore-network
-networks:
-  highscore-network:
+      - ./:/home/node/app
+    expose:
+      - "3000:3000"
+    command: "npm start"

@@ -1,8 +1,10 @@
-# Testing add-ins
+#############################
+###  Testing requirements ###
+#############################
 
-httpx==0.18.2
-pytest==6.2.4
-pytest-asyncio==0.15.1
+httpx~=0.18
+pytest~=6.2
+pytest-asyncio~=0.15
 
 # For testclient
-requests==2.25.1
+requests~=2.25

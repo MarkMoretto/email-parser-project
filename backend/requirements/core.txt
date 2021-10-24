@@ -3,17 +3,19 @@
 ##############################
 
 # FastAPI
-fastapi
+fastapi~=0.70
 
 # Rust-based JSON package
-orjson
+orjson~=3.6
 
 # Form data and more
 python-multipart~=0.0.5
 
 # Server
-uvicorn[standard]
+uvicorn[standard]~=0.15
 
+# Uncomment to include testing.txt
+-r testing.txt
 
 # Uncomment to include development.txt
--r dev.txt
+#-r dev.txt

@@ -2,16 +2,26 @@ node_modules/
 npm-debug.log
 Dockerfile
 docker-compose.yml
-.dockerignore
-.env
-.env.example
-.git*
-.gitignore
-.travis.yml
 Procfile
 runtime.txt
 README.md
 LICENSE
 logo.png
-__pycache__/
+.dockerignore
+.env
+.env.development
+.git*
+.gitignore
+.travis.yml
 .circleci
+
+# Python
+venv/
+__pycache__/
+
+# Local
+scripts/
+start-app.cmd
+.vscode
+.doc[x]
+dev[_-]*.*

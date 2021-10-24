@@ -8,6 +8,9 @@ fastapi
 # Rust-based JSON package
 orjson
 
+# Form data and more
+python-multipart~=0.0.5
+
 # Server
 uvicorn[standard]
 

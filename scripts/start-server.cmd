@@ -23,4 +23,4 @@ CALL venv\Scripts\activate && %launch_cmd%
 
 
 
-GOTO :eof
+EXIT /B

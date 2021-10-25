@@ -1,28 +1,122 @@
 
-// @use "../../lib/scss/theme";
 @import "../../scss/theme/main.scss";
-// @import url("../../scss/theme");
-// @use "scss/theme";
 
-// $bright-yellow: #d4b613;
-// $tailwind-purple-dk: #4c1d95;
-// $tailwind-purple-lt: #6d28d9;
-// $tailwind-cyan-dk: #06b6d4;
-// $tailwind-cyan-lt: #a5f3fc;
-// $tailwind-rose-lt: #e5e5e5;
+/*
+* Define the widths: play around with these to get a best fit.
+*/
+$text-width: 180px;
+$index-width: 20px;
 
+
+/**
+ * Top-level container for component.
+ * Allows for some micro adjustments.
+*/
 .table-container {
     margin-top: 1em;
-    // width: 100%; 
+    font-size: 1.6rem;
 }
 
-thead tr {
-    text-align: center;
-    font-size: 1.5rem;
-    background-color: $tailwind-purple-dk;
-    color: $bright-yellow;
+
+
+// Main container - row container
+.table-row {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 1px solid $tailwind-cyan-dk;
+    border-collapse: collapse;
+    padding-top: 2px;    
 }
 
-tbody tr td:nth-child(1) {
+.table-row.header {
+    background-color: $magic-blue-dk;
+    font-weight: bold;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid $tailwind-cyan-lt;
+}
+
+.row-item {
+    padding-left: 1rem;
+    border-right: 1px solid $tailwind-cyan-lt;    
+}
+
+.row-item:first-child {
+    padding-left: 0;
+}
+
+.row-item:last-child {
+    border-right: none;
+}
+
+// Wrappers around cells and other wrappers
+.wrapper {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-grow: 0;
+    -webkit-flex-grow: 0;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;    
+}
+
+// Text based cells and wrappers: grow equally when there is extra space.
+.text-4,
+.text-2,
+.text {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+}
+  
+// Text based cells: truncate and show ellipsis when there is not enough space
+.text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+// Fix the minimum width of the leaf level cells
+.text {
+    width: $text-width;
+}
+
+
+.grower {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 4px;    
+}
+
+// leaf level containers (cells): special properties 
+.index {
     text-align: center;
+    width: $index-width;
+    // border: 1px solid white;
+    padding-right: 1rem;
+    margin-right: 1rem;
+}
+
+.index-row {
+    border-right: 1px solid $tailwind-cyan-dk;
+}
+
+// leaf level containers (cells): common properties 
+.column {
+    flex-grow: 0;
+    -webkit-flex-grow: 0;
+    flex-shrink: 0; 
+    -webkit-flex-shrink: 0;
+    vertical-align: top;
 }

@@ -4,18 +4,21 @@ import { Container } from "react-bootstrap"
 
 import "./styles.scss"
 import Navigation from "../Navigation"
-import DivTable from "../DivTable"
+import DataTable from "../DataTable"
 import FormDisplay from "../FormDisplay"
 
+/**
+ * Main App entry component.
+*/
 const App = () => {
+	// Holds currentRow value following click on DataTable.
 	const [currentRow, setCurrentRow] = useState({})
-
 
 	return (
 		<Container fluid>
 			<Navigation headingText="Email Validation App" />
 			<FormDisplay currentRowData={currentRow} />
-			<DivTable onRowClick={setCurrentRow} />
+			<DataTable onRowClick={setCurrentRow} />
 		</Container>
 
 	)

@@ -38,7 +38,7 @@ const fetchOptions = {}
  * @param {Event} onRowClick Pass-thru event from parent component
  * to capture row data.
 */
-const DivTable = ({ onRowClick }) => {
+const DataTable = ({ onRowClick }) => {
     const [fetchError, setFetchError] = useState(null)
     const [fetchData, setFetchData] = useState(null)
     const [keyValues, setKeyValues] = useState([])
@@ -99,4 +99,4 @@ const DivTable = ({ onRowClick }) => {
     )
 }
 
-export default DivTable
+export default DataTable

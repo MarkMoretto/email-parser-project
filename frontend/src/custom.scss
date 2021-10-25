@@ -1,0 +1,13 @@
+/* eslint-disable */
+
+// https://create-react-app.dev/docs/adding-bootstrap/#using-a-custom-theme
+
+// https://www.color-hex.com/color-palette/115735
+// https://www.color-hex.com/color-palette/115746
+// Override default variables before the import
+$body-bg: #154367;
+$body-color: #ffe5ee;
+
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';

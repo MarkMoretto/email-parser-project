@@ -1,39 +1,17 @@
 /* eslint-disable */
-import { 
-    Alignment,
-    AnchorButton,
-    Classes,
-    Navbar,
-    NavbarGroup,
-    NavbarHeading,
-    NavbarDivider    
-} from "@blueprintjs/core"
+
+import { Container, Image, Nav, Navbar } from "react-bootstrap"
+import BrandLogo from "../BrandLogo"
+import "./styles.css"
 
 
-const Navigation = ({ headingText }) => {
+const Navigation = ({ headingText, ...props }) => {
     return (
-        <Navbar className={Classes.DARK}>
-            <NavbarGroup align={Alignment.LEFT}>
-                <NavbarHeading>
-                    {headingText ? headingText : "App"}
-                </NavbarHeading>
-                <NavbarDivider />
-                <AnchorButton
-                    href="https://www.validity.com/"
-                    text="Validity"
-                    target="_blank"
-                    minimal
-                    rightIcon="share"
-                />
-                <AnchorButton
-                    href="http://github.com/palantir/blueprint"
-                    text="Github"
-                    target="_blank"
-                    minimal
-                    rightIcon="code"
-                />
-            </NavbarGroup>
-        </Navbar>   
+            <Navbar className="nav-bar-1 bg-nav-main" expand="md" {...props}>
+                <Navbar.Brand href="https://www.validity.com/" target="_blank" rel="noreferrer">
+                    <BrandLogo brandName="Validity" width="125" height="60" /> 
+                </Navbar.Brand>
+            </Navbar> 
     )
 }
 

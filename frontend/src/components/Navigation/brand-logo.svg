@@ -1,10 +1,14 @@
 <svg version="1.1" 
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width="130"
-    height="107"
-    viewBox="0 0 841.9 595.3">
+    viewBox="0 0 153.29 37">
     <defs>
+        <style>
+            .cls-1{fill:#1996ff;}
+            .cls-2{fill:#43c462;}
+            .cls-3{fill:#1951c4;}
+            .cls-4{fill:#071b2b;}
+        </style>
     </defs>
     <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1">

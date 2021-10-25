@@ -6,8 +6,9 @@ import { render } from "react-dom"
 import App from "./components/App"
 
 // Main css
-import "./index.scss"
+// import "./index.scss"
 import "./custom.scss"
+// import "./lib/scss"
 
 render(
     <StrictMode>

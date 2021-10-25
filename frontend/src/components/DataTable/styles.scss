@@ -1,0 +1,28 @@
+
+// @use "../../lib/scss/theme";
+@import "../../scss/theme/main.scss";
+// @import url("../../scss/theme");
+// @use "scss/theme";
+
+// $bright-yellow: #d4b613;
+// $tailwind-purple-dk: #4c1d95;
+// $tailwind-purple-lt: #6d28d9;
+// $tailwind-cyan-dk: #06b6d4;
+// $tailwind-cyan-lt: #a5f3fc;
+// $tailwind-rose-lt: #e5e5e5;
+
+.table-container {
+    margin-top: 1em;
+    // width: 100%; 
+}
+
+thead tr {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: $tailwind-purple-dk;
+    color: $bright-yellow;
+}
+
+tbody tr td:nth-child(1) {
+    text-align: center;
+}

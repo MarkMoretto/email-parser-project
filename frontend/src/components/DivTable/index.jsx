@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 import { useEffect, useState } from "react"
 import { Container, Table } from "react-bootstrap"
 import { v4 as uuidv4} from "uuid"
@@ -56,31 +57,34 @@ const DataTable = () => {
     }, [fetchData])
 
     return (
-        <Container className="table-container">
+        <div className="table-container">
         {fetchData && 
-            <Table striped bordered hover size="sm" responsive="lg"> 
-                <thead>
-                    <tr key={uuidv4()}>
-                        <th key={uuidv4()} style={{width: "30px"}}>#</th>
+            <Container fluid>
+            <div key={uuidv4()} className="table-row wrapper header">
+                <div key={uuidv4()} className="column index">#</div>
+                <div key={uuidv4()} className="wrapper text-4">
+                    <div key={uuidv4()} className="wrapper text-2">
                         {keyValues.map(item => (
-                            <th key={uuidv4()}>{item}</th>
+                            <div key={uuidv4()} className="text">{item}</div>
                         ))}
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {fetchData.map((row, rowIndex) => (
-                        <tr key={uuidv4()}>
-                            <td key={uuidv4()}>{rowIndex}</td>
+                    </div>
+                </div>
+            </div>
+            {fetchData.map((row, rowIndex) => (
+                <div className="table-row wrapper">
+                    <div key={uuidv4()} className="column index index-row">{rowIndex}</div>
+                    <div key={uuidv4()} className="wrapper text-4">
+                        <div key={uuidv4()} className="wrapper text-2">
                             {keyValues.map(k => (
-                                <td key={uuidv4()}>{row[k]}</td>          
-                            )) }
-                        </tr>
-                    ))} 
-                </tbody>  
-                    
-            </Table>}
-        </Container>
+                                <div key={uuidv4()} className="text" title={row[k]}>{row[k]}</div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))} 
+            </Container>            
+            }
+        </div>
     )
 }
 

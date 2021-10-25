@@ -1,0 +1,109 @@
+
+@import "../../scss/theme/main.scss";
+
+/*
+* Define the widths: play around with these to get a best fit.
+*/
+$text-width: 180px;
+$index-width: 20px;
+
+
+/**
+ * Top-level container for component.
+ * Allows for some micro adjustments.
+*/
+.table-container {
+    margin-top: 1em;
+    font-size: 1.6rem;
+}
+
+
+
+// Main container - row container
+.table-row {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-wrap: no-wrap;
+    -webkit-flex-wrap: no-wrap;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 1px solid $tailwind-cyan-dk;
+    border-collapse: collapse;
+    padding-top: 2px;    
+}
+
+.table-row.header {
+    background-color: $tailwind-purple-dk;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid $tailwind-cyan-lt;
+}
+
+// Wrappers around cells and other wrappers
+.wrapper {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-grow: 0;
+    -webkit-flex-grow: 0;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;    
+}
+
+// Text based cells and wrappers: grow equally when there is extra space.
+.text-4,
+.text-2,
+.text {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+}
+  
+// Text based cells: truncate and show ellipsis when there is not enough space
+.text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+// Fix the minimum width of the leaf level cells
+.text {
+    width: $text-width;
+}
+
+
+.grower {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 4px;    
+}
+
+// leaf level containers (cells): special properties 
+.index {
+    text-align: center;
+    width: $index-width;
+    // border: 1px solid white;
+    padding-right: 1rem;
+    margin-right: 1rem;
+}
+
+.index-row {
+    border-right: 1px solid $tailwind-cyan-dk;
+}
+
+// leaf level containers (cells): common properties 
+.column {
+    flex-grow: 0;
+    -webkit-flex-grow: 0;
+    flex-shrink: 0; 
+    -webkit-flex-shrink: 0;
+    vertical-align: top;
+}

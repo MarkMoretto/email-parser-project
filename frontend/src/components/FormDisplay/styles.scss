@@ -1,0 +1,45 @@
+
+@import "../../scss/theme/main.scss";
+
+$form-font-size: 1.7rem;
+
+/**
+ * Top-level container for component.
+ * Allows for some micro adjustments.
+*/
+.form-container {
+    width: 60%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-size: 1.6rem;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="textarea"] {
+    font-size: $form-font-size;
+    &:read-only {
+        background-color: $body-bg;
+        color: $magic-cream;      
+    }
+}
+
+// Textarea element, by ID value.
+#formFieldSubject {
+    font-size: $form-font-size;
+    resize: vertical;
+    background-color: $body-bg;
+    color: $magic-cream;      
+}
+
+.sm-text {
+    width: 40%;
+}
+
+.lg-text {
+    width: 80%;
+}
+

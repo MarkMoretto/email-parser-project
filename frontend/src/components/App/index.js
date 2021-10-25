@@ -1,16 +1,21 @@
 /* eslint-disable */
+import { useState } from "react"
 import { Container } from "react-bootstrap"
 
 import "./styles.scss"
 import Navigation from "../Navigation"
-import DataTable from "../DataTable"
 import DivTable from "../DivTable"
+import FormDisplay from "../FormDisplay"
 
 const App = () => {
+	const [currentRow, setCurrentRow] = useState({})
+
+
 	return (
 		<Container fluid>
 			<Navigation headingText="Email Validation App" />
-			<DivTable />
+			<FormDisplay currentRowData={currentRow} />
+			<DivTable onRowClick={setCurrentRow} />
 		</Container>
 
 	)

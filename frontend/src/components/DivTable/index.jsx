@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import { useEffect, useState } from "react"
-import { Container, Table } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import { v4 as uuidv4} from "uuid"
 
 import "./styles.scss"
@@ -26,8 +26,19 @@ const apiEndpoint = "messages"
 */
 const getObjKeys = obj => Object.keys(obj)
 
+/**
+ * Optional arguments to pass to fetch.
+ * @constant
+*/
+const fetchOptions = {}
 
-const DataTable = () => {
+
+/**
+ * Table component to display parsed JSON data.
+ * @param {Event} onRowClick Pass-thru event from parent component
+ * to capture row data.
+*/
+const DivTable = ({ onRowClick }) => {
     const [fetchError, setFetchError] = useState(null)
     const [fetchData, setFetchData] = useState(null)
     const [keyValues, setKeyValues] = useState([])
@@ -37,7 +48,7 @@ const DataTable = () => {
         let isSubscribed = true;
 
         // Try to communicate with sever API
-        fetch(`${apiUrl}${apiEndpoint}`)
+        fetch(`${apiUrl}${apiEndpoint}`, fetchOptions)
             .then(response => response.json())
             .then(data => isSubscribed ? setFetchData(data["messages"]) : null)
             .catch(err => isSubscribed ? setFetchError(err) : null)
@@ -61,17 +72,17 @@ const DataTable = () => {
         {fetchData && 
             <Container fluid>
             <div key={uuidv4()} className="table-row wrapper header">
-                <div key={uuidv4()} className="column index">#</div>
+                <div key={uuidv4()} className="column index row-item">#</div>
                 <div key={uuidv4()} className="wrapper text-4">
                     <div key={uuidv4()} className="wrapper text-2">
                         {keyValues.map(item => (
-                            <div key={uuidv4()} className="text">{item}</div>
+                            <div key={uuidv4()} className="text row-item">{item}</div>
                         ))}
                     </div>
                 </div>
             </div>
             {fetchData.map((row, rowIndex) => (
-                <div className="table-row wrapper">
+                <div key={uuidv4()} className="table-row wrapper" onClick={() => onRowClick(row)}>
                     <div key={uuidv4()} className="column index index-row">{rowIndex}</div>
                     <div key={uuidv4()} className="wrapper text-4">
                         <div key={uuidv4()} className="wrapper text-2">
@@ -88,4 +99,4 @@ const DataTable = () => {
     )
 }
 
-export default DataTable
+export default DivTable

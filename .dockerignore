@@ -8,12 +8,13 @@ README.md
 LICENSE
 logo.png
 .dockerignore
-.env
+.env*
 .env.development
 .git*
 .gitignore
 .travis.yml
 .circleci
+.prettier*
 
 # Python
 venv/

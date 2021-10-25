@@ -1,17 +1,17 @@
 # syntax=docker/dockerfile:1
 FROM node:16
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 
 # Install app dependencies
-COPY package*.json /usr/src/app
+COPY package*.json /app
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . /app
 
-EXPOSE 3000
+EXPOSE 3000:3000
 
 # Run application
 CMD ["npm", "run", "start"]

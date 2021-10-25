@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
+"""
+Main API module for email messages.
+"""
 import orjson
-from typing import Optional, List
+from .._types import Optional, List
 
 from pydantic import BaseModel
 

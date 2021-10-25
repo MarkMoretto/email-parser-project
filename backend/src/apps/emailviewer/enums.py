@@ -42,13 +42,3 @@ class CollectionName(str, Enum):
     Used as drop-down menu when checking out ~/docs.
     """
     emailmessage = "emailmessage"
-
-
-class YesNoMaybe(str, Enum):
-    """Option enum for basic decisions."""
-    # NO = auto()
-    # YES = auto()
-    # OTHER = auto()
-    NO = "No"
-    YES = "Yes"
-    OTHER = "Other"

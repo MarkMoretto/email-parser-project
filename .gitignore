@@ -28,3 +28,4 @@ dev[_-]*.*
 *.doc[x]
 *.xls[xm]
 sampleEmails.tar*
+dev[_-]*/

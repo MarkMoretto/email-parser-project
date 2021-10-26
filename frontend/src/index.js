@@ -8,6 +8,7 @@ import App from "./components/App"
 // Main css
 import "bootstrap/dist/css/bootstrap.min.css"
 
+// eslint-disable-next-line
 render(
     <StrictMode>
       <App />

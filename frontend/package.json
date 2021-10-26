@@ -2,8 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "author": {
-    "name": "mark moretto",
-    "email": "otteromkram+jobs2021@gmail.com"
+    "name": "mark moretto"
   },
   "private": true,
   "dependencies": {

@@ -1,5 +1,18 @@
 node_modules/
-dev[_-]*.*
-.gitignore
+npm-debug.log
+Dockerfile
+docker-compose.yml
+Procfile
+runtime.txt
 README.md
+.dockerignore
 .env*
+.env.development
+.git*
+.gitignore
+.travis.yml
+.circleci
+.prettier*
+
+# Local
+.vscode/

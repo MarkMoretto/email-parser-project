@@ -1,0 +1,5 @@
+node_modules/
+dev[_-]*.*
+.gitignore
+README.md
+.env*

@@ -1,17 +1,23 @@
 # syntax=docker/dockerfile:1
-FROM node:16
+FROM node:16-alpine
 
 WORKDIR /app
 
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
 
 # Install app dependencies
-COPY package*.json /app
+COPY package.json ./
+COPY package-lock.json ./
+
 RUN npm install
+RUN npm install react-scripts@3.4.1 -g
 
 # Bundle app source
-COPY . /app
+COPY . ./
 
-EXPOSE 3000:3000
+# EXPOSE 3000:3000
 
 # Run application
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]

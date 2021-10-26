@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  backend_python:
+    build: ./backend
+
+  frontend_node:
+    build: ./frontend
+    stdin_open: true

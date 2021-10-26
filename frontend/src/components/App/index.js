@@ -2,7 +2,8 @@
 import { useState } from "react"
 import { Container } from "react-bootstrap"
 
-import "./styles.scss"
+import "../../static/css/styles.css"
+import "./styles.css"
 import Navigation from "../Navigation"
 import DataTable from "../DataTable"
 import FormDisplay from "../FormDisplay"

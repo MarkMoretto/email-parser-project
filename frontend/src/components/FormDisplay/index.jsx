@@ -2,7 +2,7 @@
 import { Form } from "react-bootstrap"
 import { v4 as uuidv4} from "uuid"
 
-import "./styles.scss"
+import "./styles.css"
 
 /**
  * Form component to display row items when clicked.

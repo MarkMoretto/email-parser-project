@@ -1,5 +1,9 @@
 @ECHO OFF
 
+:: https://docs.docker.com/language/nodejs/build-images/
+
+SET DOCKER_BUILDKIT=1
+
 SET IMAGE_NAME=frontend:dev
 SET PORTS=3001:3000
 SET CHOKIDAR_USEPOLLING=true

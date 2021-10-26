@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { Container, Image, Nav, Navbar } from "react-bootstrap"
+import { Navbar } from "react-bootstrap"
 import BrandLogo from "../BrandLogo"
 import "./styles.css"
 

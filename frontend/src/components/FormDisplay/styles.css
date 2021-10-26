@@ -1,7 +1,9 @@
+@import url("../../static/css/styles.css");
 
-@import "../../scss/theme/main.scss";
+:root {
+    --form-font-size: 1.7rem;
+}
 
-$form-font-size: 1.7rem;
 
 /**
  * Top-level container for component.
@@ -20,19 +22,21 @@ $form-font-size: 1.7rem;
 
 input[type="text"],
 input[type="textarea"] {
-    font-size: $form-font-size;
-    &:read-only {
-        background-color: $body-bg;
-        color: $magic-cream;      
-    }
+    font-size: var(--form-font-size);
 }
 
-// Textarea element, by ID value.
+input[type="text"]:read-only,
+input[type="textarea"]:read-only {
+    background-color: var(--body-bg);
+    color: var(--magic-cream);
+}
+
+/* Textarea element, by ID value. */
 #formFieldSubject {
-    font-size: $form-font-size;
+    font-size: var(--form-font-size);
     resize: vertical;
-    background-color: $body-bg;
-    color: $magic-cream;      
+    background-color: var(--body-bg);
+    color: var(--magic-cream);      
 }
 
 .sm-text {
@@ -42,4 +46,3 @@ input[type="textarea"] {
 .lg-text {
     width: 80%;
 }
-

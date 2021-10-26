@@ -1,9 +1,9 @@
 node_modules/
-debug.log
-npm-debug.log
-build
+build/
+Dockerfile
 .dockerignore
 **/.git
 **/.DS_Store
 **/node_modules
-.env*
+.env
+.env.*

@@ -1,12 +1,10 @@
 
-@import "../../scss/theme/main.scss";
+@import url("../../static/css/styles.css");
 
-/*
-* Define the widths: play around with these to get a best fit.
-*/
-$text-width: 180px;
-$index-width: 20px;
-
+:root {
+    --text-width: 180px;
+    --index-width: 20px;
+}
 
 /**
  * Top-level container for component.
@@ -19,7 +17,7 @@ $index-width: 20px;
 
 
 
-// Main container - row container
+/* Main container - row container */
 .table-row {
     display: flex;
     display: -webkit-flex;
@@ -30,22 +28,22 @@ $index-width: 20px;
     width: 100%;
     padding-left: 5px;
     padding-right: 5px;
-    border-bottom: 1px solid $tailwind-cyan-dk;
+    border-bottom: 1px solid var(--tailwind-cyan-dk);
     border-collapse: collapse;
     padding-top: 2px;    
 }
 
 .table-row.header {
-    background-color: $magic-blue-dk;
+    background-color: var(--magic-blue-dk);
     font-weight: bold;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    border-bottom: 2px solid $tailwind-cyan-lt;
+    border-bottom: 2px solid var(--tailwind-cyan-lt);
 }
 
 .row-item {
     padding-left: 1rem;
-    border-right: 1px solid $tailwind-cyan-lt;    
+    border-right: 1px solid var(--tailwind-cyan-lt);    
 }
 
 .row-item:first-child {
@@ -56,7 +54,7 @@ $index-width: 20px;
     border-right: none;
 }
 
-// Wrappers around cells and other wrappers
+/* Wrappers around cells and other wrappers */
 .wrapper {
     display: flex;
     display: -webkit-flex;
@@ -68,7 +66,7 @@ $index-width: 20px;
     -webkit-flex-wrap: wrap;    
 }
 
-// Text based cells and wrappers: grow equally when there is extra space.
+/* Text based cells and wrappers: grow equally when there is extra space. */
 .text-4,
 .text-2,
 .text {
@@ -76,7 +74,7 @@ $index-width: 20px;
     -webkit-flex-grow: 1;
 }
   
-// Text based cells: truncate and show ellipsis when there is not enough space
+/* Text based cells: truncate and show ellipsis when there is not enough space */
 .text {
     overflow: hidden;
     white-space: nowrap;
@@ -84,9 +82,9 @@ $index-width: 20px;
     padding-right: 10px;
 }
 
-// Fix the minimum width of the leaf level cells
+/* Fix the minimum width of the leaf level cells */
 .text {
-    width: $text-width;
+    width: var(--text-width);
 }
 
 
@@ -99,20 +97,20 @@ $index-width: 20px;
     padding-right: 4px;    
 }
 
-// leaf level containers (cells): special properties 
+/* leaf level containers (cells): special properties  */
 .index {
     text-align: center;
-    width: $index-width;
-    // border: 1px solid white;
+    width: var(--index-width);
+    /* border: 1px solid white; */
     padding-right: 1rem;
     margin-right: 1rem;
 }
 
 .index-row {
-    border-right: 1px solid $tailwind-cyan-dk;
+    border-right: 1px solid var(--tailwind-cyan-dk);
 }
 
-// leaf level containers (cells): common properties 
+/* leaf level containers (cells): common properties  */
 .column {
     flex-grow: 0;
     -webkit-flex-grow: 0;

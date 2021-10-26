@@ -6,7 +6,7 @@ import { render } from "react-dom"
 import App from "./components/App"
 
 // Main css
-import "./custom.scss"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 render(
     <StrictMode>

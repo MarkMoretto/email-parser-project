@@ -46,7 +46,17 @@ input[type="text"]:hover {
     border: 0.5px solid var(--tailwind-purple-lt);
 }
 
-/* Textarea element, by ID value. */
+/************************************
+    Textarea element -
+        selected by by ID value.
+
+    Why?  Well, that's for you to
+    figure out...
+
+    ...
+
+    ...and let me know when you do.
+************************************/
 #formFieldSubject {
     font-size: var(--form-font-size);
     resize: vertical;

@@ -1,0 +1,25 @@
+# syntax=docker/dockerfile:1
+
+# First stage
+FROM node:16-stretch-slim as builder
+
+ARG NODE_ENV=production
+# ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
+
+RUN apk --no-cache add python make g++
+
+COPY package*.json ./
+RUN npm install --production
+
+# Second stage
+FROM node:16-stretch-slim
+
+WORKDIR /app
+# WORKDIR /usr/src/app # Alternative
+
+COPY --from=builder node_modules node_modules
+
+COPY . .
+
+CMD [ "npm", "run", "start:prod" ]

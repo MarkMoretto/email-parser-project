@@ -1,15 +1,13 @@
 # syntax=docker/dockerfile:1
+FROM node:16-stretch-slim
 
-FROM node:16.4.2
+WORKDIR /usr/src/app
+# WORKDIR /app # Alternative
 
-ENV NODE_ENV=production
+COPY package*.json /usr/src/app
 
-WORKDIR /app
-
-COPY ["package.json", "package-lock.json*", "./"]
-
-RUN npm install --production
+RUN npm install
 
 COPY . .
 
-CMD [ "node", "server.js" ]
+CMD [ -d "node_modules"] && npm run start || npm ci && npm run start

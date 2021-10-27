@@ -1,15 +1,20 @@
 # syntax=docker/dockerfile:1
-FROM python:3.7-slim
+FROM python:3.7-slim-stretch
 
-WORKDIR /app
+ENV PYTHONUNBUFFERED=1
 
-# COPY /requirements/core.txt requirements/core.txt
+WORKDIR /usr/src/app
+# WORKDIR /app
+
+
+COPY /requirements /usr/src/app/requirements
+# COPY /requirements/core.txt /usr/src/app/backend/requirements/core.txt
 # COPY /requirements/testing.txt requirements/testing.txt
-COPY . /app
+# COPY . /usr/src/app/backend
 
-RUN pip install -r /app/requirements/core.txt
+RUN pip install -r /usr/src/app/requirements/core.txt
 
-EXPOSE 8000:8000
+# EXPOSE 8000:8000
 
 COPY . .
 

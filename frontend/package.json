@@ -1,6 +1,9 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "author": {
+    "name": "mark moretto"
+  },
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.10.2",

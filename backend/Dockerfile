@@ -7,12 +7,12 @@ WORKDIR /usr/src/app
 # WORKDIR /app
 
 
-COPY /requirements /usr/src/app/requirements
+COPY /requirements/ ./
 # COPY /requirements/core.txt /usr/src/app/backend/requirements/core.txt
 # COPY /requirements/testing.txt requirements/testing.txt
 # COPY . /usr/src/app/backend
 
-RUN pip install -r /usr/src/app/requirements/core.txt
+RUN pip install -r ./requirements/core.txt
 
 # EXPOSE 8000:8000
 

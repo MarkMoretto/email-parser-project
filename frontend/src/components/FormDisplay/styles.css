@@ -6,6 +6,14 @@
 
 
 /**
+ * Wrapping container for form section.
+ * Most other attributes are inherited from bootstrap.
+*/
+.container-fluid {
+    background-color: var(--body-bg);
+}
+
+/**
  * Top-level container for component.
  * Allows for some micro adjustments.
 */
@@ -18,6 +26,8 @@
     align-content: flex-start;
     font-size: 1.6rem;
     margin: 0 auto;
+    background-color: var(--body-bg);
+    color: var(--magic-cream);
 }
 
 input[type="text"],
@@ -31,12 +41,21 @@ input[type="textarea"]:read-only {
     color: var(--magic-cream);
 }
 
+/* --tailwind-purple-lt */
+input[type="text"]:hover {
+    border: 0.5px solid var(--tailwind-purple-lt);
+}
+
 /* Textarea element, by ID value. */
 #formFieldSubject {
     font-size: var(--form-font-size);
     resize: vertical;
     background-color: var(--body-bg);
     color: var(--magic-cream);      
+}
+
+#formFieldSubject:hover {
+    border: 0.5px solid var(--tailwind-purple-lt);
 }
 
 .sm-text {

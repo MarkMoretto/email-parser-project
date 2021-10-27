@@ -7,6 +7,14 @@
 }
 
 /**
+ * Wrapping container for form section.
+ * Most other attributes are inherited from bootstrap.
+*/
+.container-fluid {
+    color: var(--magic-cream);
+}
+
+/**
  * Top-level container for component.
  * Allows for some micro adjustments.
 */

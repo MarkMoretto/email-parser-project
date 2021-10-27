@@ -6,7 +6,10 @@ import { render } from "react-dom"
 import App from "./components/App"
 
 // Main css
+// import "./static/css/styles.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "./static/css/styles.css"
 
 // eslint-disable-next-line
 render(

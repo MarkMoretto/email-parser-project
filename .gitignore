@@ -27,6 +27,7 @@ yarn-error.log*
 dev[_-]*.*
 *.doc[x]
 *.xls[xm]
-sampleEmails.tar*
+**/sampleEmails.tar*
+!backend/**/data/sampleEmails.tar.gz
 dev[_-]*/
 *.7z
